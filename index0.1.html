@@ -4,19 +4,19 @@
 <script>
 $(function(){
 
-	$("dd").attr("contenteditable","false");
-	$("dl").attr("contenteditable","true");
-	$("dd").wrapInner("<span class='entry' contenteditable='true'></span>")
+	$("li").attr("contenteditable","false");
+	$("ul").attr("contenteditable","true");
+	$("li").wrapInner("<span class='entry' contenteditable='true'></span>")
 /*
-	$("dl").keydown(function(event){
+	$("ul").keydown(function(event){
 		console.log(event.currentTarget);
 		if(event.keyCode==9){
-			event.preventDefadlt();	
+			event.preventDefault();	
 			// find cursor
 			
-			var new_dd = "<dl><dd></dd></dl>"
+			var new_li = "<ul><li></li></ul>"
 
-			$(this).wrap(new_dd)
+			$(this).wrap(new_li)
 			// insert html at cursor
 			
 		}
@@ -29,9 +29,9 @@ $(function(){
 			event.preventDefault();	
 			// find cursor
 			
-			/*var new_dd = "<dl><dd></dd></dl>"
+			/*var new_li = "<ul><li></li></ul>"
 			$(this).wrap("<div></div>")
-			$(this).append(new_dd)*/
+			$(this).append(new_li)*/
 
 			$(this).parent().prev().append($(this).parent())
 			// insert html at cursor
@@ -46,18 +46,18 @@ $(function(){
 	<body>
 		<textarea></textarea>
 		<input type="submit" value="Add new">
-		<dl >
+		<ul >
 
-			<dd>Jacob's Homepage</dd>
-			<dd>CJ's Homepage</dd>
-			<dd><dt>Semon's Homepage<dt>
-				<dl>
-					<dd>Synthetic bio</dd>
-				</dl>
-			</dd>
-			<dd><a href="scott.htm">Scott Aaronson's Homepage</a></dd>
-			<dd>Ben Koo's Homepage</dd>
+			<li>Jacob's Homepage</li>
+			<li>CJ's Homepage</li>
+			<li><div>Semon's Homepage<div>
+				<ul>
+				<li>Synthetic bio</li>
+				</ul>
+			</li>
+			<li><a href="scott.htm">Scott Aaronson's Homepage</a></li>
+			<li>Ben Koo's Homepage</li>
 
-		</dl>
+		</ul>
 	</body>
 </html>
